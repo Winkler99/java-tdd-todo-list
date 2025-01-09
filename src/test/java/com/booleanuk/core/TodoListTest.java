@@ -265,9 +265,9 @@ class TodoListTest {
         todoList.add("vacuum");
         todoList.add("walk the dog");
 
+        strings.add("wash");
         strings.add("walk the dog");
         strings.add("vacuum");
-        strings.add("wash");
         strings.add("clean");
 
         Assertions.assertLinesMatch(strings, todoList.tasksAscending() );

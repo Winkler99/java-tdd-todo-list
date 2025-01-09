@@ -114,4 +114,20 @@ public class TodoList {
 
         return strings;
     }
+
+    public List<String> tasksAscending(){
+        List<String> strings = new ArrayList<String>(tasks.keySet()) {};
+        String errorMsg = "No tasks available";
+
+        Collections.sort(strings);
+
+        Collections.reverse(strings);
+
+        if(strings.isEmpty()){
+            strings.add(errorMsg);
+            return strings;
+        }
+
+        return strings;
+    }
 }
