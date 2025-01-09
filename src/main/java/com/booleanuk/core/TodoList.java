@@ -94,4 +94,12 @@ public class TodoList {
 
         return strings;
     }
+
+    public boolean removeTask(String taskName){
+        if(tasks.containsKey(taskName)){
+            tasks.remove(taskName);
+            return true;
+        }
+        return false;
+    }
 }
