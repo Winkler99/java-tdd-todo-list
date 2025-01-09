@@ -59,4 +59,24 @@ public class TodoList {
 
         return strings;
     }
+
+    public List<String> getUnCompletedTasks(){
+        List<String> strings = new ArrayList<String>() {};
+        String errorMsg = "You have no uncompleted tasks";
+
+
+        for (String task : tasks.keySet()){
+            if(!tasks.get(task)){
+                strings.add(task);
+
+            }
+        }
+
+        if(strings.isEmpty()) {
+            strings.add(errorMsg);
+            return strings;
+        }
+
+        return strings;
+    }
 }

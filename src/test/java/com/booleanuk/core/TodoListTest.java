@@ -132,6 +132,11 @@ class TodoListTest {
         todoList.add("vacuum");
         todoList.add("walk the dog");
 
+        todoList.updateTaskStatus("clean" , true);
+        todoList.updateTaskStatus("wash" , true);
+        todoList.updateTaskStatus("vacuum" , true);
+        todoList.updateTaskStatus("walk the dog" , true);
+
         strings.add("You have no uncompleted tasks");
 
         Assertions.assertLinesMatch(strings, todoList.getUnCompletedTasks() );
