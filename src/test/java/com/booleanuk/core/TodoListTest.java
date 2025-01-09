@@ -36,7 +36,7 @@ class TodoListTest {
     @Test
     public void listAllTasksInTodolist() {
         TodoList todoList = new TodoList();
-        List<String> strings = new ArrayList<String>() {};
+        List<String> strings = new ArrayList<>() {};
 
 
 
@@ -53,7 +53,7 @@ class TodoListTest {
     @Test
     public void listAllTasksInTodolistWhenItIsEmpty() {
         TodoList todoList = new TodoList();
-        List<String> strings = new ArrayList<String>() {};
+        List<String> strings = new ArrayList<>() {};
 
         strings.add("Your todolist is empty");
 
@@ -91,7 +91,7 @@ class TodoListTest {
     @Test
     public void getCompletedTasksWhenNotEmpty(){
         TodoList todoList = new TodoList();
-        List<String> strings = new ArrayList<String>() {};
+        List<String> strings = new ArrayList<>() {};
 
         todoList.add("clean");
         todoList.add("wash");
@@ -110,7 +110,7 @@ class TodoListTest {
     @Test
     public void getCompletedTasksWhenEmpty(){
         TodoList todoList = new TodoList();
-        List<String> strings = new ArrayList<String>() {};
+        List<String> strings = new ArrayList<>() {};
 
         todoList.add("clean");
         todoList.add("wash");
@@ -125,7 +125,7 @@ class TodoListTest {
     @Test
     public void getUnCompletedTasksWhenEmpty(){
         TodoList todoList = new TodoList();
-        List<String> strings = new ArrayList<String>() {};
+        List<String> strings = new ArrayList<>() {};
 
         todoList.add("clean");
         todoList.add("wash");
@@ -145,7 +145,7 @@ class TodoListTest {
     @Test
     public void getUnCompletedTasksWhenNotEmpty(){
         TodoList todoList = new TodoList();
-        List<String> strings = new ArrayList<String>() {};
+        List<String> strings = new ArrayList<>() {};
 
         todoList.add("clean");
         todoList.add("wash");
@@ -164,7 +164,7 @@ class TodoListTest {
     @Test
     public void searchTaskThatDoesNotExist(){
         TodoList todoList = new TodoList();
-        List<String> strings = new ArrayList<String>() {};
+        List<String> strings = new ArrayList<>() {};
         String taskName = "watch tv";
 
         todoList.add("clean");
@@ -181,7 +181,7 @@ class TodoListTest {
     @Test
     public void searchTaskThatDoesExist(){
         TodoList todoList = new TodoList();
-        List<String> strings = new ArrayList<String>() {};
+        List<String> strings = new ArrayList<>() {};
         String taskName = "wash";
 
         todoList.add("clean");
@@ -228,7 +228,7 @@ class TodoListTest {
     @Test
     public void tasksDescendingWhenNotEmpty(){
         TodoList todoList = new TodoList();
-        List<String> strings = new ArrayList<String>() {};
+        List<String> strings = new ArrayList<>() {};
 
         todoList.add("clean");
         todoList.add("wash");
@@ -247,7 +247,7 @@ class TodoListTest {
     @Test
     public void tasksDescendingWhenEmpty(){
         TodoList todoList = new TodoList();
-        List<String> strings = new ArrayList<String>() {};
+        List<String> strings = new ArrayList<>() {};
 
         strings.add("No tasks available");
 
@@ -258,7 +258,7 @@ class TodoListTest {
     @Test
     public void tasksAscendingWhenNotEmpty(){
         TodoList todoList = new TodoList();
-        List<String> strings = new ArrayList<String>() {};
+        List<String> strings = new ArrayList<>() {};
 
         todoList.add("clean");
         todoList.add("wash");
@@ -277,7 +277,7 @@ class TodoListTest {
     @Test
     public void tasksAscendingWhenEmpty(){
         TodoList todoList = new TodoList();
-        List<String> strings = new ArrayList<String>() {};
+        List<String> strings = new ArrayList<>() {};
 
         strings.add("No tasks available");
 
