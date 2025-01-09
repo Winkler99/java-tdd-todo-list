@@ -1,8 +1,6 @@
 package com.booleanuk.core;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class TodoList {
 
@@ -101,5 +99,19 @@ public class TodoList {
             return true;
         }
         return false;
+    }
+
+    public List<String> taskDescending(){
+        List<String> strings = new ArrayList<String>(tasks.keySet()) {};
+        String errorMsg = "No tasks available";
+
+        Collections.sort(strings);
+
+        if(strings.isEmpty()){
+            strings.add(errorMsg);
+            return strings;
+        }
+
+        return strings;
     }
 }

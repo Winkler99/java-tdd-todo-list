@@ -237,8 +237,8 @@ class TodoListTest {
 
         strings.add("clean");
         strings.add("vacuum");
-        strings.add("walks the dog");
-        strings.add("Wash");
+        strings.add("walk the dog");
+        strings.add("wash");
 
         Assertions.assertLinesMatch(strings, todoList.taskDescending() );
 
@@ -249,7 +249,7 @@ class TodoListTest {
         TodoList todoList = new TodoList();
         List<String> strings = new ArrayList<String>() {};
 
-        strings.add("Not tasks available");
+        strings.add("No tasks available");
 
         Assertions.assertLinesMatch(strings, todoList.taskDescending() );
 
