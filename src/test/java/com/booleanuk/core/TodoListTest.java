@@ -226,7 +226,7 @@ class TodoListTest {
     }
 
     @Test
-    public void taskDescendingWhenNotEmpty(){
+    public void tasksDescendingWhenNotEmpty(){
         TodoList todoList = new TodoList();
         List<String> strings = new ArrayList<String>() {};
 
@@ -240,18 +240,48 @@ class TodoListTest {
         strings.add("walk the dog");
         strings.add("wash");
 
-        Assertions.assertLinesMatch(strings, todoList.taskDescending() );
+        Assertions.assertLinesMatch(strings, todoList.tasksDescending() );
 
     }
 
     @Test
-    public void taskDescendingWhenEmpty(){
+    public void tasksDescendingWhenEmpty(){
         TodoList todoList = new TodoList();
         List<String> strings = new ArrayList<String>() {};
 
         strings.add("No tasks available");
 
-        Assertions.assertLinesMatch(strings, todoList.taskDescending() );
+        Assertions.assertLinesMatch(strings, todoList.tasksDescending() );
+
+    }
+
+    @Test
+    public void tasksAscendingWhenNotEmpty(){
+        TodoList todoList = new TodoList();
+        List<String> strings = new ArrayList<String>() {};
+
+        todoList.add("clean");
+        todoList.add("wash");
+        todoList.add("vacuum");
+        todoList.add("walk the dog");
+
+        strings.add("walk the dog");
+        strings.add("vacuum");
+        strings.add("wash");
+        strings.add("clean");
+
+        Assertions.assertLinesMatch(strings, todoList.tasksAscending() );
+
+    }
+
+    @Test
+    public void tasksAscendingWhenEmpty(){
+        TodoList todoList = new TodoList();
+        List<String> strings = new ArrayList<String>() {};
+
+        strings.add("No tasks available");
+
+        Assertions.assertLinesMatch(strings, todoList.tasksAscending() );
 
     }
 }

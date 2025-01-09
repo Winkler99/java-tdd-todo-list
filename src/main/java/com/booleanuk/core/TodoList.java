@@ -101,7 +101,7 @@ public class TodoList {
         return false;
     }
 
-    public List<String> taskDescending(){
+    public List<String> tasksDescending(){
         List<String> strings = new ArrayList<String>(tasks.keySet()) {};
         String errorMsg = "No tasks available";
 
