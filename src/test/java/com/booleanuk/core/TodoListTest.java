@@ -88,4 +88,38 @@ class TodoListTest {
 
     }
 
+    @Test
+    public void getCompletedTasksWhenNotEmpty(){
+        TodoList todoList = new TodoList();
+        List<String> strings = new ArrayList<String>() {};
+
+        todoList.add("clean");
+        todoList.add("wash");
+        todoList.add("vacuum");
+        todoList.add("walk the dog");
+
+        todoList.updateTaskStatus("clean" , true);
+        todoList.updateTaskStatus("wash" , true);
+
+        strings.add("clean");
+        strings.add("wash");
+
+        Assertions.assertLinesMatch(strings, todoList.getCompletedTasks() );
+    }
+
+    @Test
+    public void getCompletedTasksWhenEmpty(){
+        TodoList todoList = new TodoList();
+        List<String> strings = new ArrayList<String>() {};
+
+        todoList.add("clean");
+        todoList.add("wash");
+        todoList.add("vacuum");
+        todoList.add("walk the dog");
+
+        strings.add("You have no completed tasks");
+
+        Assertions.assertLinesMatch(strings, todoList.getCompletedTasks() );
+    }
+
 }
