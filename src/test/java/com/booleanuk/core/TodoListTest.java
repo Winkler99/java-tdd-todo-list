@@ -225,4 +225,33 @@ class TodoListTest {
 
     }
 
+    @Test
+    public void taskDescendingWhenNotEmpty(){
+        TodoList todoList = new TodoList();
+        List<String> strings = new ArrayList<String>() {};
+
+        todoList.add("clean");
+        todoList.add("wash");
+        todoList.add("vacuum");
+        todoList.add("walk the dog");
+
+        strings.add("clean");
+        strings.add("vacuum");
+        strings.add("walks the dog");
+        strings.add("Wash");
+
+        Assertions.assertLinesMatch(strings, todoList.taskDescending() );
+
+    }
+
+    @Test
+    public void taskDescendingWhenEmpty(){
+        TodoList todoList = new TodoList();
+        List<String> strings = new ArrayList<String>() {};
+
+        strings.add("Not tasks available");
+
+        Assertions.assertLinesMatch(strings, todoList.taskDescending() );
+
+    }
 }
