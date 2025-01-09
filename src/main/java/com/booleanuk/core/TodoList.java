@@ -79,4 +79,19 @@ public class TodoList {
 
         return strings;
     }
+
+    public List<String> searchTask(String taskName){
+        List<String> strings = new ArrayList<String>() {};
+        String message = "There was no task with that name";
+
+
+        if(tasks.containsKey(taskName)){
+            message = "There is a task with that name";
+            strings.add(message);
+            return strings;
+        }
+        strings.add(message);
+
+        return strings;
+    }
 }

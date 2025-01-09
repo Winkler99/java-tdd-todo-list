@@ -165,14 +165,14 @@ class TodoListTest {
     public void searchTaskThatDoesNotExist(){
         TodoList todoList = new TodoList();
         List<String> strings = new ArrayList<String>() {};
-        String taskName = "wash";
+        String taskName = "watch tv";
 
         todoList.add("clean");
         todoList.add("wash");
         todoList.add("vacuum");
         todoList.add("walk the dog");
 
-        strings.add("wash");
+        strings.add("There was no task with that name");
 
         Assertions.assertLinesMatch(strings, todoList.searchTask(taskName) );
 
@@ -182,14 +182,14 @@ class TodoListTest {
     public void searchTaskThatDoesExist(){
         TodoList todoList = new TodoList();
         List<String> strings = new ArrayList<String>() {};
-        String taskName = "watch tv";
+        String taskName = "wash";
 
         todoList.add("clean");
         todoList.add("wash");
         todoList.add("vacuum");
         todoList.add("walk the dog");
 
-        strings.add("There was no task with that name");
+        strings.add("There is a task with that name");
 
         Assertions.assertLinesMatch(strings, todoList.searchTask(taskName) );
 
