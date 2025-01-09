@@ -17,17 +17,17 @@
 | getNotCompletedTasks()                        |                                | There are uncompleted tasks in the todolist                | List<string> with all uncompleted tasks |
 |                                               |                                | There are no uncompleted tasks in the todolist             | List<string> with error message         |
 |                                               |                                |                                                            |                                         |
-| SearchTask(String)                            |                                | There was a task with the provided name                    | string with the task                    |
+| SearchTask(String)                            |                                | There was a task with the provided name                    | string with a message                   |
 |                                               |                                | There was no task with the provided name                   | string with error message               |
 |                                               |                                |                                                            |                                         |
 | removeTask(String)                            |                                | Task with the provided name is not in the todolist         | true                                    |
 |                                               |                                | Task with the provided name is in the todolist             | false                                   |
 |                                               |                                |                                                            |                                         |
-| taskDescending()                              |                                | There are tasks in the todolist                            | string in descending order by name      |
-|                                               |                                | There are no tasks in the todolist                         | string with error message               |
+| taskDescending()                              |                                | There are tasks in the todolist                            | List<string> in descending order by name      |
+|                                               |                                | There are no tasks in the todolist                         | List<string> with error message               |
 |                                               |                                |                                                            |                                         |
-| taskAscending()                               |                                | There are tasks in the todolist                            | string in ascending order by name       |
-|                                               |                                | There are no tasks in the todolist                         | string with error message               |
+| taskAscending()                               |                                | There are tasks in the todolist                            | List<string> in ascending order by name       |
+|                                               |                                | There are no tasks in the todolist                         | List<string> with error message               |
 
 
 
