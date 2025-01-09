@@ -60,4 +60,32 @@ class TodoListTest {
         Assertions.assertLinesMatch(strings, todoList.listTasks() );
     }
 
+    @Test
+    public void updateTaskStatusWithExistingName(){
+        TodoList todoList = new TodoList();
+        String taskName = "clean";
+
+        todoList.add("clean");
+        todoList.add("wash");
+        todoList.add("vacuum");
+        todoList.add("walk the dog");
+
+        Assertions.assertTrue(todoList.updateTaskStatus(taskName , true));
+
+    }
+
+    @Test
+    public void updateTaskStatusWithNonExistingName(){
+        TodoList todoList = new TodoList();
+        String taskName = "watch tv";
+
+        todoList.add("clean");
+        todoList.add("wash");
+        todoList.add("vacuum");
+        todoList.add("walk the dog");
+
+        Assertions.assertFalse(todoList.updateTaskStatus(taskName , true));
+
+    }
+
 }
