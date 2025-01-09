@@ -31,4 +31,12 @@ public class TodoList {
 
         return strings;
     }
+
+    public boolean updateTaskStatus(String taskName, Boolean taskCompletion){
+        if(tasks.containsKey(taskName)){
+            tasks.replace(taskName, taskCompletion);
+            return true;
+        }
+        return false;
+    }
 }
