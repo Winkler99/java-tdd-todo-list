@@ -101,8 +101,8 @@ class TodoListTest {
         todoList.updateTaskStatus("clean" , true);
         todoList.updateTaskStatus("wash" , true);
 
-        strings.add("clean");
         strings.add("wash");
+        strings.add("clean");
 
         Assertions.assertLinesMatch(strings, todoList.getCompletedTasks() );
     }

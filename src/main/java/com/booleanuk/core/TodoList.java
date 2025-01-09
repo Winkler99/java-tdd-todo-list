@@ -39,4 +39,24 @@ public class TodoList {
         }
         return false;
     }
+
+    public List<String> getCompletedTasks(){
+        List<String> strings = new ArrayList<String>() {};
+        String errorMsg = "You have no completed tasks";
+
+
+        for (String task : tasks.keySet()){
+            if(tasks.get(task)){
+                strings.add(task);
+
+            }
+        }
+
+        if(strings.isEmpty()) {
+            strings.add(errorMsg);
+            return strings;
+        }
+
+        return strings;
+    }
 }
