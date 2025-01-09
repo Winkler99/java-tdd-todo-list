@@ -3,6 +3,9 @@ package com.booleanuk.core;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class TodoListTest {
     @Test
     public void addTaskToListThatAlreadyExist() {
@@ -33,27 +36,28 @@ class TodoListTest {
     @Test
     public void listAllTasksInTodolist() {
         TodoList todoList = new TodoList();
-        String taskName = "run";
+        List<String> strings = new ArrayList<String>() {};
+
+
 
         todoList.add("clean");
         todoList.add("wash");
         todoList.add("vacuum");
         todoList.add("walk the dog");
 
-        Assertions.assertLinesMatch("clean, wash, vacuum, walk the dog", todoList.listTasks());
+        strings.addAll(todoList.tasks.keySet());
+
+        Assertions.assertLinesMatch(strings, todoList.listTasks() );
     }
 
     @Test
     public void listAllTasksInTodolistWhenItIsEmpty() {
         TodoList todoList = new TodoList();
-        String taskName = "run";
+        List<String> strings = new ArrayList<String>() {};
 
-        todoList.add("clean");
-        todoList.add("wash");
-        todoList.add("vacuum");
-        todoList.add("walk the dog");
+        strings.add("Your todolist is empty");
 
-        Assertions.assertLinesMatch("Your todolist is empty", todoList.listTasks());
+        Assertions.assertLinesMatch(strings, todoList.listTasks() );
     }
 
 }

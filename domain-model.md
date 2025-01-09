@@ -5,8 +5,8 @@
 | add(String name)                              | HashMap<String, Boolean> tasks | Task with the provided name is not already in the todolist                    | true                               |
 |                                               |                                | Task with the provided name is already in the todolist                        | false                              |
 |                                               |                                |                                                                               |                                    |
-| listTasks( )                                  |                                | There are tasks in the todolist                                               | string with all tasks              |
-|                                               |                                | There are no tasks in the todolist                                            | string with error message          |
+| listTasks( )                                  |                                | There are tasks in the todolist                                               | List<string> with all tasks        |
+|                                               |                                | There are no tasks in the todolist                                            | List<string> with error message    |
 |                                               |                                |                                                                               |                                    |
 | updateTaskStatus(String name, Boolean status) |                                | There is a task with the provided name and has the requested status           | true                               |
 |                                               |                                | There is no task with the provided name or does not have the requested status | false                              |
