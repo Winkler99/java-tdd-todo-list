@@ -195,4 +195,34 @@ class TodoListTest {
 
     }
 
+    @Test
+    public void removeTaskThatDoesExist(){
+        TodoList todoList = new TodoList();
+        String taskName = "wash";
+
+        todoList.add("clean");
+        todoList.add("wash");
+        todoList.add("vacuum");
+        todoList.add("walk the dog");
+
+
+        Assertions.assertTrue(todoList.removeTask(taskName));
+
+    }
+
+    @Test
+    public void removeTaskThatDoesNotExist(){
+        TodoList todoList = new TodoList();
+        String taskName = "watch tv";
+
+        todoList.add("clean");
+        todoList.add("wash");
+        todoList.add("vacuum");
+        todoList.add("walk the dog");
+
+
+        Assertions.assertFalse(todoList.removeTask(taskName));
+
+    }
+
 }
