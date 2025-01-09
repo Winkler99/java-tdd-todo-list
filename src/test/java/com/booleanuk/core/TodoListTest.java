@@ -30,5 +30,30 @@ class TodoListTest {
         Assertions.assertTrue(todoList.add(taskName));
     }
 
+    @Test
+    public void listAllTasksInTodolist() {
+        TodoList todoList = new TodoList();
+        String taskName = "run";
+
+        todoList.add("clean");
+        todoList.add("wash");
+        todoList.add("vacuum");
+        todoList.add("walk the dog");
+
+        Assertions.assertLinesMatch("clean, wash, vacuum, walk the dog", todoList.listTasks());
+    }
+
+    @Test
+    public void listAllTasksInTodolistWhenItIsEmpty() {
+        TodoList todoList = new TodoList();
+        String taskName = "run";
+
+        todoList.add("clean");
+        todoList.add("wash");
+        todoList.add("vacuum");
+        todoList.add("walk the dog");
+
+        Assertions.assertLinesMatch("Your todolist is empty", todoList.listTasks());
+    }
 
 }
