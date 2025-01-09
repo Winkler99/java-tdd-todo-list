@@ -122,4 +122,38 @@ class TodoListTest {
         Assertions.assertLinesMatch(strings, todoList.getCompletedTasks() );
     }
 
+    @Test
+    public void getUnCompletedTasksWhenEmpty(){
+        TodoList todoList = new TodoList();
+        List<String> strings = new ArrayList<String>() {};
+
+        todoList.add("clean");
+        todoList.add("wash");
+        todoList.add("vacuum");
+        todoList.add("walk the dog");
+
+        strings.add("You have no uncompleted tasks");
+
+        Assertions.assertLinesMatch(strings, todoList.getUnCompletedTasks() );
+    }
+
+    @Test
+    public void getUnCompletedTasksWhenNotEmpty(){
+        TodoList todoList = new TodoList();
+        List<String> strings = new ArrayList<String>() {};
+
+        todoList.add("clean");
+        todoList.add("wash");
+        todoList.add("vacuum");
+        todoList.add("walk the dog");
+
+        todoList.updateTaskStatus("clean" , true);
+        todoList.updateTaskStatus("wash" , true);
+
+        strings.add("vacuum");
+        strings.add("walk the dog");
+
+        Assertions.assertLinesMatch(strings, todoList.getUnCompletedTasks() );
+    }
+
 }
