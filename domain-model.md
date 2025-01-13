@@ -52,10 +52,11 @@
 
 ## Task
 
-| Method              | Member Variable  | Scenario | Result |
-|---------------------|------------------|----------|--------|
-|                     | int id           |          |        |
-|                     | String name      |          |        |
-|                     | Boolean complete |          |        |
-|                     | String details   |          |        |
-| Getters and setters |                  |          |        |
+| Method              | Member Variable      | Scenario | Result |
+|---------------------|----------------------|----------|--------|
+|                     | Static int idCounter |          |        |
+|                     | int id               |          |        |
+|                     | String name          |          |        |
+|                     | Boolean complete     |          |        |
+|                     | String details       |          |        |
+| Getters and setters |                      |          |        |

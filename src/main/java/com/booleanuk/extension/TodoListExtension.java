@@ -10,15 +10,47 @@ public class TodoListExtension {
     public ArrayList<Task> extensionTask = new ArrayList<>();
 
     public String getTaskByID(int id){
+        String output = "No task with that ID was found";
+        for(Task task : extensionTask){
+            if(id == task.getId()){
+                output = "ID: " + task.getId() + ", Name: " + task.getName() + ", Complete: " + task.getComplete() + ", Details: " + task.getDetails();
+            }
+        }
 
-        return "s";
+        return output;
     }
 
     public Boolean updateTaskName(int id, String newName){
-        return true;
+        for(Task task : extensionTask){
+            if(id == task.getId()){
+                task.setName(newName);
+            }
+        }
+
+        for(Task task : extensionTask){
+            if(task.getName() == newName){
+                task.setName(newName);
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public Boolean updateTaskStatusById(int id, Boolean status){
-        return true;
+        for(Task task : extensionTask){
+            if(id == task.getId()){
+                task.setComplete(status);
+            }
+        }
+
+        for(Task task : extensionTask){
+            if(id == task.getId()){
+                if(task.getComplete() == status){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

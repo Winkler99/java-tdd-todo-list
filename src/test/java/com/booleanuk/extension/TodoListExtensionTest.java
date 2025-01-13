@@ -11,7 +11,7 @@ public class TodoListExtensionTest {
 
 
     @Test
-    public void getTaskByUniqueId(){
+    public void getTaskByUniqueIdThatDoesExist(){
         TodoListExtension todoList = new TodoListExtension();
         Task task1 = new Task("Clean", "Vacuum");
         Task task2 = new Task("Wash", "Wash clothes");
@@ -26,6 +26,25 @@ public class TodoListExtensionTest {
         String output = "ID: " + task2.getId() + ", Name: " + task2.getName() + ", Complete: " + task2.getComplete() + ", Details: " + task2.getDetails();
 
         Assertions.assertEquals(output, todoList.getTaskByID(1));
+
+    }
+
+    @Test
+    public void getTaskByUniqueIdThatDoesNotExist(){
+        TodoListExtension todoList = new TodoListExtension();
+        Task task1 = new Task("Clean", "Vacuum");
+        Task task2 = new Task("Wash", "Wash clothes");
+        Task task3 = new Task("Dishes", "Empty the dishwasher");
+        Task task4 = new Task("Garbage", "Take out the garbage");
+
+        todoList.extensionTask.add(task1);
+        todoList.extensionTask.add(task2);
+        todoList.extensionTask.add(task3);
+        todoList.extensionTask.add(task4);
+
+        String output = "No task with that ID was found";
+
+        Assertions.assertEquals(output, todoList.getTaskByID(6));
 
     }
 

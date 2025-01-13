@@ -2,13 +2,15 @@ package com.booleanuk.extension;
 
 public class Task {
 
-    private int id = 0;
+    public static int idCounter = 0;
+    private int id;
     private String name;
     private Boolean complete;
     private String details;
 
     public Task(String name, String details){
-        id++;
+        id = idCounter++;
+        this.name = name;
         this.details = details;
         complete = false;
     }
@@ -25,24 +27,16 @@ public class Task {
         return details;
     }
 
-    public void setDetails(String details) {
-        this.details = details;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
     }
 
 }
