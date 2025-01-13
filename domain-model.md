@@ -35,28 +35,27 @@
 
 ## Todo
 
-| Method                                       | Member Variable       | Scenario | Result |
-|----------------------------------------------|-----------------------|----------|--------|
-| add(String name)                             | ArrayList<Task> tasks |          |        |
-|                                              | id                    |          |        |
-| listTasks( )                                 |                       |          |        |
-| updateTaskStatus(Task task, Boolean state)   |                       |          |        |
-|                                              |                       |          |        |
-| getCompletedTasks()                          |                       |          |        |
-| getNotCompletedTasks()                       |                       |          |        |
-| SearchTask(Task task)                        |                       |          |        |
-| removeTask(Task task)                        |                       |          |        |
-| taskDescending()                             |                       |          |        |
-| taskAscending()                              |                       |          |        |
-| getTaskById(int id)                          |                       |          |        |
-| updateTaskName(int id, String newName)       |                       |          |        |
-| updateTaskStatusById(int id, Boolean status) |                       |          |        |
-|                                              |                       |          |        |
+| Method                                       | Member Variable       | Scenario                                          | Result |
+|----------------------------------------------|-----------------------|---------------------------------------------------|--------|
+|                                              | ArrayList<Task> tasks |                                                   |        |
+|                                              |                       |                                                   |        |
+|                                              |                       |                                                   |        |
+|                                              |                       |                                                   |        |
+| getTaskById(int id)                          |                       | Search after a task with an existing ID           | String |
+|                                              |                       | Search after a task with no existing ID           | String |
+|                                              |                       |                                                   |        |
+| updateTaskName(int id, String newName)       |                       | Update a task that exists with a new name         | true   |
+|                                              |                       | Update a task that does not exist with a new name | false  |
+|                                              |                       |                                                   |        |
+| updateTaskStatusById(int id, Boolean status) |                       | Update a task that exists to wished status        | true   |
+|                                              |                       | Update a task that exists to wished status        | false  |
 
 ## Task
 
-| Method | Member Variable  | Scenario | Result |
-|--------|------------------|----------|--------|
-|        |                  |          |        |
-|        | Boolean complete |          |        |
-|        | String name      |          |        |
+| Method              | Member Variable  | Scenario | Result |
+|---------------------|------------------|----------|--------|
+|                     | int id           |          |        |
+|                     | String name      |          |        |
+|                     | Boolean complete |          |        |
+|                     | String details   |          |        |
+| Getters and setters |                  |          |        |
