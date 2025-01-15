@@ -2,6 +2,7 @@ package com.booleanuk.extension;
 
 import com.booleanuk.core.TodoList;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -9,6 +10,10 @@ import java.util.List;
 
 public class TodoListExtensionTest {
 
+    @BeforeEach
+    public void reset(){
+        Task.idCounter = 0;
+    }
 
     @Test
     public void getTaskByUniqueIdThatDoesExist(){
@@ -27,6 +32,7 @@ public class TodoListExtensionTest {
 
         Assertions.assertEquals(output, todoList.getTaskByID(1));
 
+
     }
 
     @Test
@@ -44,7 +50,8 @@ public class TodoListExtensionTest {
 
         String output = "No task with that ID was found";
 
-        Assertions.assertEquals(output, todoList.getTaskByID(6));
+        Assertions.assertEquals(output, todoList.getTaskByID(100));
+
 
     }
 
@@ -63,6 +70,7 @@ public class TodoListExtensionTest {
 
         Assertions.assertTrue(todoList.updateTaskName(2, "Dishwasher"));
 
+
     }
 
     @Test
@@ -79,5 +87,7 @@ public class TodoListExtensionTest {
         todoList.extensionTask.add(task4);
 
         Assertions.assertTrue(todoList.updateTaskStatusById(3, true));
+
+
     }
 }
